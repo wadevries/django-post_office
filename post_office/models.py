@@ -140,6 +140,8 @@ class EmailTemplate(models.Model):
                                validators=[validate_template_syntax])
     html_content = models.TextField(blank=True,
                                     validators=[validate_template_syntax])
+    language = models.CharField(max_length=10, choices=settings.LANGUAGES,
+                                blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
 
