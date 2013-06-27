@@ -279,6 +279,7 @@ class ModelTest(TestCase):
         self.assertEqual(emails[0].subject, 'Hi Bob')
         self.assertEqual(emails[0].message, 'Message Bob')
         self.assertEqual(emails[0].html_message, '<b>Bob</b>')
+        self.assertEqual(emails[0].headers, headers)
 
     def test_invalid_syntax(self):
         """
